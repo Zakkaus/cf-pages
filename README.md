@@ -108,7 +108,7 @@ npm run build
 
 <div align="center">
 
-**🌐 預覽地址：** [https://error.zakk.au](https://error.zakk.au)
+**🌐 示範地址：** [https://error.zakk.au](https://error.zakk.au)
 
 </div>
 
@@ -169,7 +169,7 @@ npm run build
 
 <div align="center">
 
-**🌐 预览地址：** [https://error.zakk.au](https://error.zakk.au)
+**🌐 示范地址：** [https://error.zakk.au](https://error.zakk.au)
 
 </div>
 
