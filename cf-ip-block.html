@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Access Restricted</title>
+    <script>
+      (function () {
+        var storageKey = "cfThemePreference";
+        var root = document.documentElement;
+        if (!root) {
+          return;
+        }
+
+        var applyTheme = function (value) {
+          var normalized = value === "dark" ? "dark" : "light";
+          root.setAttribute("data-theme", normalized);
+          if (root.style) {
+            root.style.colorScheme = normalized;
+          }
+        };
+
+        var systemPreference = function () {
+          if (!window.matchMedia) {
+            return null;
+          }
+
+          try {
+            if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+              return "dark";
+            }
+            if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+              return "light";
+            }
+          } catch (error) {}
+
+          return null;
+        };
+
+        var storedTheme = null;
+
+        try {
+          var stored = window.localStorage.getItem(storageKey);
+          if (stored === "dark" || stored === "light") {
+            storedTheme = stored;
+          }
+        } catch (error) {}
+
+        var resolved = storedTheme || systemPreference() || "dark";
+        applyTheme(resolved);
+
+        if (!storedTheme && window.matchMedia) {
+          var queries = ["(prefers-color-scheme: dark)", "(prefers-color-scheme: light)"];
+          var handleSystemChange = function () {
+            var next = systemPreference();
+            applyTheme(next || "dark");
+          };
+
+          for (var i = 0; i < queries.length; i++) {
+            try {
+              var mql = window.matchMedia(queries[i]);
+              if (!mql) {
+                continue;
+              }
+
+              if (typeof mql.addEventListener === "function") {
+                mql.addEventListener("change", handleSystemChange);
+              } else if (typeof mql.addListener === "function") {
+                mql.addListener(handleSystemChange);
+              }
+            } catch (error) {}
+          }
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="output.css" />
+  </head>
+
+  <body class="relative min-h-screen bg-slate-950 text-slate-100 antialiased" data-page="cfIpBlock">
+    <div class="pointer-events-none absolute inset-0 overflow-hidden">
+      <div class="absolute left-[18%] top-[-32%] h-[46rem] w-[46rem] -translate-x-1/2 rounded-full bg-sky-500/25 blur-[220px]"></div>
+      <div class="absolute right-[-12%] top-[-26%] h-[42rem] w-[42rem] rounded-full bg-indigo-500/20 blur-[210px]"></div>
+      <div class="absolute bottom-[-32%] right-[-15%] h-[36rem] w-[36rem] rounded-full bg-cyan-500/15 blur-[170px]"></div>
+    </div>
+
+    <div class="relative flex min-h-screen flex-col">
+      <header class="mx-auto w-full max-w-6xl px-6 pt-12">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div class="flex items-center gap-4">
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/15 bg-white/10 shadow-lg shadow-sky-500/20">
+              <img
+                src="koala_3d.webp"
+                alt="Zakk logo"
+                class="h-9 w-9"
+                onerror="this.onerror=null;this.src='logo.svg';"
+              />
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-[0.35em] text-sky-300/70" data-i18n="categoryLabel">IP / Country Block</p>
+              <p class="text-2xl font-semibold leading-tight text-white" data-i18n="brandName">Zakk</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <a
+              href="https://error.zakk.au"
+              class="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-white/60 shadow-inner transition hover:border-sky-400/40 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300"
+              aria-label="Visit error.zakk.au"
+            >
+              <span class="font-medium text-white/80">error.zakk.au</span>
+            </a>
+            <button
+              type="button"
+              class="theme-toggle"
+              data-theme-toggle
+              data-i18n="themeToggleLabel"
+              data-i18n-attr="aria-label"
+            >
+              <span class="theme-toggle__icon" data-theme-icon="sun" aria-hidden="true">☀</span>
+              <span class="theme-toggle__icon" data-theme-icon="moon" aria-hidden="true">🌙</span>
+              <span class="sr-only" data-i18n="themeToggleLabel">Toggle color theme</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main class="mx-auto w-full max-w-6xl flex-1 px-6 py-12">
+        <div class="grid gap-8 xl:grid-cols-[minmax(0,1.65fr)_minmax(0,1fr)]">
+          <section class="rounded-3xl border border-white/10 bg-white/10 p-10 shadow-2xl shadow-sky-500/15 backdrop-blur-xl">
+            <div class="cf-badge" data-i18n="categoryLabel">IP / Country block</div>
+            <h1 class="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-5xl" data-i18n="heading">Access restricted</h1>
+            <p class="mt-4 text-lg leading-relaxed text-white/70" data-i18n="messageMain">
+              Requests from your IP address or region are not allowed by the site's security policy.
+            </p>
+            <div class="mt-8 space-y-4">
+              <div class="rounded-2xl border border-white/15 bg-slate-950/30 p-5 text-sm leading-relaxed text-white/70" data-i18n="messageSecondary" data-i18n-mode="html">
+                If you require access, please contact the site owner or open a
+                <a class="font-semibold text-sky-300 hover:text-sky-200" href="mailto:admin@zakk.au?subject=IP%20%2F%20Country%20Block%20|%20Ray%20ID:::RAY_ID::&body=Let%20us%20know%20why%20you%20need%20access%20and%20we%E2%80%99ll%20take%20a%20look.">support ticket.</a>
+              </div>
+            </div>
+          </section>
+
+          <aside class="flex h-full flex-col justify-between gap-8 rounded-3xl border border-white/10 bg-slate-950/40 p-8 shadow-xl shadow-sky-500/10 backdrop-blur-xl">
+            <div>
+              <h2 class="text-xs uppercase tracking-[0.3em] text-white/50">Request details</h2>
+              <div class="mt-6 space-y-3">
+                <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 font-mono text-sm text-sky-100/80" data-i18n="ray">Ray ID: ::RAY_ID::</div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 font-mono text-sm text-sky-100/80" data-i18n="clientIp">Client IP: ::CLIENT_IP::</div>
+              </div>
+            </div>
+            <p class="text-xs leading-relaxed text-white/50" data-i18n="rayHelp">
+              Cloudflare Ray IDs refresh with every request. Share them with our support team to help us trace the issue quickly.
+            </p>
+          </aside>
+        </div>
+      </main>
+
+      <footer class="mx-auto w-full max-w-6xl px-6 pb-12">
+        <div class="rounded-2xl border border-white/10 bg-white/5 px-6 py-5 text-xs text-white/60 shadow-inner shadow-sky-500/10">
+          <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div class="flex flex-wrap items-center gap-3 text-white/70">
+              <span class="text-sm font-semibold text-white">Zakk</span>
+              <span class="hidden h-3 w-px bg-white/15 sm:block" aria-hidden="true"></span>
+              <span class="text-xs text-white/60">Cloudflare custom pages suite</span>
+            </div>
+            <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs">
+              <a href="https://github.com/Zakkaus/cf-pages" class="font-medium text-sky-200/80 transition hover:text-sky-100" target="_blank" rel="noopener noreferrer">Source code</a>
+              <span class="hidden h-3 w-px bg-white/15 sm:block" aria-hidden="true"></span>
+              <a href="https://zakk.au" class="font-medium text-sky-200/80 transition hover:text-sky-100" target="_blank" rel="noopener noreferrer">Blog</a>
+              <span class="hidden h-3 w-px bg-white/15 sm:block" aria-hidden="true"></span>
+              <a href="https://help.zakk.au" class="font-medium text-sky-200/80 transition hover:text-sky-100" target="_blank" rel="noopener noreferrer">Forum</a>
+              <span class="hidden h-3 w-px bg-white/15 sm:block" aria-hidden="true"></span>
+              <a href="https://error.zakk.au" class="font-medium text-sky-200/80 transition hover:text-sky-100" target="_blank" rel="noopener noreferrer">Error preview</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="lang.js" defer></script>
+  </body>
+</html>
