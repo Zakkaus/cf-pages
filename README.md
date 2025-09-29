@@ -42,7 +42,8 @@
 - **Challenge (light):** Managed challenge journey with refreshed guidance and action messaging.
 - **Challenge (dark):** Dark counterpart emphasising contrast around the verification widget.
 
-## �🇺🇸 English
+
+## 🇺🇸 English
 
 <div align="center">
 
