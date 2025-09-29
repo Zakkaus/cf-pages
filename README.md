@@ -54,6 +54,23 @@
 
 Every page renders the brand, category label, Ray ID and support link inside a compact card; Cloudflare injects Ray and client IP data at runtime.
 
+### 🖼️ UI Gallery (WebP)
+
+<div align="center">
+  <img src="assets/screenshots/homepage-light.webp" alt="Homepage template in light mode" width="360" />
+  <img src="assets/screenshots/homepage-dark.webp" alt="Homepage template in dark mode" width="360" />
+</div>
+
+<div align="center">
+  <img src="assets/screenshots/challenge-light.webp" alt="Managed challenge page in light mode" width="360" />
+  <img src="assets/screenshots/challenge-dark.webp" alt="Managed challenge page in dark mode" width="360" />
+</div>
+
+- **Homepage (light):** Main catalogue view with hero card, navigation, and new Always Online preview copy.
+- **Homepage (dark):** Night theme showcasing the same layout with balanced contrast and glow accents.
+- **Challenge (light):** Managed challenge flow displaying updated guidance and supportive messaging.
+- **Challenge (dark):** Dark mode counterpart highlighting readability and focus on the verification widget.
+
 ### 🎨 Customise It
 
 1. Update strings in `lang.js` to change tone, add locales or tweak mailto templates.
