@@ -47,7 +47,7 @@
 
 <div align="center">
 
-**🌐 Primary Address:** [https://error.zakk.au](https://error.zakk.au)
+**🌐 Preview Address:** [https://error.zakk.au](https://error.zakk.au)
 
 </div>
 
@@ -108,7 +108,7 @@ npm run build
 
 <div align="center">
 
-**🌐 主要地址：** [https://error.zakk.au](https://error.zakk.au)
+**🌐 預覽地址：** [https://error.zakk.au](https://error.zakk.au)
 
 </div>
 
@@ -169,7 +169,7 @@ npm run build
 
 <div align="center">
 
-**🌐 主站地址：** [https://error.zakk.au](https://error.zakk.au)
+**🌐 预览地址：** [https://error.zakk.au](https://error.zakk.au)
 
 </div>
 
