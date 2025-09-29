@@ -24,7 +24,39 @@
 
 ---
 
-## 🇺🇸 English
+## 🖼️ UI Preview / 介面預覽 / 界面预览
+
+<div align="center">
+  <img src="assets/screenshots/homepage-light.webp" alt="Homepage template in light mode" width="360" />
+  <img src="assets/screenshots/homepage-dark.webp" alt="Homepage template in dark mode" width="360" />
+</div>
+
+<div align="center">
+  <img src="assets/screenshots/challenge-light.webp" alt="Managed challenge page in light mode" width="360" />
+  <img src="assets/screenshots/challenge-dark.webp" alt="Managed challenge page in dark mode" width="360" />
+</div>
+
+#### 🇺🇸 Highlights
+- **Homepage (light):** Main catalogue view with hero card, primary navigation, and the Always Online preview copy.
+- **Homepage (dark):** Night-ready treatment that keeps layout parity while showcasing glow accents.
+- **Challenge (light):** Managed challenge journey with refreshed guidance and action messaging.
+- **Challenge (dark):** Dark counterpart emphasising contrast around the verification widget.
+
+#### 🇹🇼 亮點
+- **首頁（淺色）：** 主目錄版面，包含主打卡片、導覽列與 Always Online 說明文字。
+- **首頁（深色）：** 夜間主題呈現，相同排版搭配柔和光暈效果。
+- **驗證頁（淺色）：** Managed challenge 流程，展示更新後的引導與操作文案。
+- **驗證頁（深色）：** 深色介面強調驗證元件的聚焦可讀性。
+
+#### �🇳 亮点
+- **首页（浅色）：** 目录视图，包含主卡片、导航与 Always Online 说明。
+- **首页（深色）：** 夜间主题版本，保持一致布局并展示柔和光晕。
+- **验证页（浅色）：** Managed challenge 流程，展示全新引导与操作提示。
+- **验证页（深色）：** 深色界面突出验证组件的可读性与对比度。
+
+---
+
+## �🇺🇸 English
 
 <div align="center">
 
@@ -53,23 +85,6 @@
 | `offline.html` | Always Online™ fallback notice |
 
 Every page renders the brand, category label, Ray ID and support link inside a compact card; Cloudflare injects Ray and client IP data at runtime.
-
-### 🖼️ UI Gallery (WebP)
-
-<div align="center">
-  <img src="assets/screenshots/homepage-light.webp" alt="Homepage template in light mode" width="360" />
-  <img src="assets/screenshots/homepage-dark.webp" alt="Homepage template in dark mode" width="360" />
-</div>
-
-<div align="center">
-  <img src="assets/screenshots/challenge-light.webp" alt="Managed challenge page in light mode" width="360" />
-  <img src="assets/screenshots/challenge-dark.webp" alt="Managed challenge page in dark mode" width="360" />
-</div>
-
-- **Homepage (light):** Main catalogue view with hero card, navigation, and new Always Online preview copy.
-- **Homepage (dark):** Night theme showcasing the same layout with balanced contrast and glow accents.
-- **Challenge (light):** Managed challenge flow displaying updated guidance and supportive messaging.
-- **Challenge (dark):** Dark mode counterpart highlighting readability and focus on the verification widget.
 
 ### 🎨 Customise It
 
