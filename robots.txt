@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://error.zakk.au/sitemap.xml
